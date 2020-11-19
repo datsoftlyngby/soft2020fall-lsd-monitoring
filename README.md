@@ -1,8 +1,5 @@
 # Your Turn - Scenario
 
-
-![](images/your_turn.gif)
-
 Reproduce the following scenario to get a first feeling for how to work with Prometheus and Grafana.
 
 This scenario is described on a Linux machine. It will likely not work with a Native Docker installation on Windows and OS X. You can find the entire source code for this scenario on Github https://github.com/datsoftlyngby/soft2020fall-lsd-monitoring
@@ -47,10 +44,11 @@ Now, navigate your browser to `http://<your_host>:8080/metrics` and refresh from
 
 ## Starting Prometheus to Collect Metrics
 
-Now, we let Prometheus collect our applications metrics:
+Now, we let Prometheus collect our applications metrics,
+from the folder with the ~prometheus.yml~:
 
 ~~~bash
-$ docker run --name prometheus --net="host" -v `pwd`/prometheus.yml:/etc/prometheus/prometheus.yml -p 9090:9090 -d prom/prometheus
+$ docker run --name prometheus -v "$(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml" -p 9090:9090 -d --rm prom/prometheus
 ~~~
 
 Navigate your browser to `http://<your_host>:9090/graph?g0.range_input=1h&g0.expr=cpu_load_percent&g0.tab=0&g1.range_input=1h&g1.expr=http_responses_total&g1.tab=0&g2.range_input=1h&g2.expr=request_duration_milliseconds_bucket&g2.tab=0` to see your metrics through Prometheus inbuilt dashboard.
