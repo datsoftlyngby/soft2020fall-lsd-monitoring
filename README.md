@@ -5,7 +5,7 @@
 
 Reproduce the following scenario to get a first feeling for how to work with Prometheus and Grafana.
 
-This scenario is described on a Linux machine. It will likely not work with a Native Docker installation on Windows and OS X. You can find the entire source code for this scenario on Github https://github.com/datsoftlyngby/soft2018fall-lsd-teaching-material/tree/master/lecture_notes/10-DevOps_Monitoring
+This scenario is described on a Linux machine. It will likely not work with a Native Docker installation on Windows and OS X. You can find the entire source code for this scenario on Github https://github.com/datsoftlyngby/soft2020fall-lsd-monitoring
 
 
 ## Starting a web-application
