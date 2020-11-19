@@ -59,7 +59,7 @@ Navigate your browser to `http://<your_host>:9090/graph?g0.range_input=1h&g0.exp
 Finally, to get visually more appealing metrics and to configure alarms, we start up Grafana
 
 ~~~bash
-$ docker run --net="host" --name grafana -p 3000:3000 -d grafana/grafana:4.5.2
+$ docker run --name grafana -p 3000:3000 -d grafana/grafana:4.5.2
 ~~~
 
 
