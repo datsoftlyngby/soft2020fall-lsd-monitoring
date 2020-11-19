@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"log"
 	"math/rand"
 	"net/http"
@@ -59,7 +60,7 @@ func main() {
 	log.SetPrefix("INFO: ")
 	log.Println("Listening to http://" + serverAddress)
 	http.HandleFunc("/", landingPage)
-	http.Handle("/metrics", prometheus.Handler())
+	http.Handle("/metrics", promhttp.Handler())
 	log.Fatal(http.ListenAndServe(serverAddress, nil))
 }
 
