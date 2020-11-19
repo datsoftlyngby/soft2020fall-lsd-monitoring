@@ -14,7 +14,11 @@ This web-application does nothing more that displaying a welcome page on the roo
 
 Run the web-application:
 ~~~bash
-$ docker run --rm --name appserver --net="host" -p 8080:8080 -d helgecph/promserver
+$ cd my_app
+$ docker build -t promserver .
+$ docker run --rm --name appserver -p 8080:8080 -d promserver
+...
+$ docker stop <first hex digits of id>
 ~~~
 
 While starting the webservice inspect the code of the web-application. In particular have a look at how the metrics are logged via the Prometheus client library.
