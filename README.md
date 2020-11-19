@@ -36,7 +36,7 @@ Observe that the server application is really running. Navigate to `http://<your
 The client program simulates user interactions on the server by sending one request per second to get the main page.
 
 ~~~bash
-$ docker run --rm --name appclient --net="host" -it helgecph/promclient
+$ docker run --rm --name appclient -it promclient
 ~~~
 
 Now, navigate your browser to `http://<your_host>:8080/metrics` and refresh from time to time to see the metrics changing
