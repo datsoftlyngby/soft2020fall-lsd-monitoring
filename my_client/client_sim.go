@@ -26,7 +26,7 @@ func aSingleRequest(url string) {
 
 func main() {
 	// serverAddress := fmt.Sprintf("%s:%s/", os.Getenv("SERVER"), os.Getenv("PORT"))
-	serverAddress := "127.0.0.1:8080"
+	serverAddress := "localhost:8080"
 
 	url := "http://" + serverAddress
 	fmt.Println("Will talk to " + url)
